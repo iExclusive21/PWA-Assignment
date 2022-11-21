@@ -24,7 +24,7 @@ const initdb = async () =>
     // Open the desired object store 
     const objStore = transaction.objectStore('jate');
     // Passed in the content 
-    const request = objstore.put({ id: 1, value: content });
+    const request = objStore.put({ id: 1, value: content });
     // Confirmation of request going through
     const result = await request;
     console.log('data saved to the database', result);
@@ -39,7 +39,7 @@ export const getDb = async () => {
  
   const contactDb = await openDB('jate', 1); 
 
-  const transaction = jateDb.transaction('jate', 'readwrite');
+  const transaction = contactDb.transaction('jate', 'readwrite');
 
   const objStore = transaction.objectStore('jate');
 
